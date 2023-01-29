@@ -109,5 +109,54 @@ git push -f origin main
 
 git 版本回退
 
+--head 工作区、暂存区 修改的文件内容均被擦除
+
+git reset --hard HEAD^  (一个^代表回退一个版本)
+
+git reset --hard HEAD~3  (~N代表回退N个版本)
+
+git reset --hard 版本ID  （版本ID为指定版本）
+
+
+--soft 工作区 和 暂存区 文件内容均保持不变
+
+git reset --soft HEAD^
+
+
+--mixed  工作区文件内容保持不变，暂存区的被擦除（默认参数）
+
+git reset --soft HEAD^
+
+
+git rflog  (查看所有分支的所有操作记录)
+
+
+--------------------------------------------------------------
+
+git  创建、切换、删除分支
+
+git 查看分支
+
+查看本地分支命令：git branch
+
+查看远程分支命令：git branch -r
+
+查看所有分支：git branch -a
+
+git创建分支
+
+git branch 分支名(dev)
+
+git branch 分支名(dev) 版本ID  （创建指定版本分支）
+
+git 切换分支
+
+git checkout 分支名称
+
+git checkout -b 分支名  （创建新分支并且切换到分支）
+
+git checkout -b 分支名 版本ID （从指定提交创建本地仓库的新分支并切换到分支）
+
+
 
 --------------------------------------------------------------
