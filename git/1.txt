@@ -20,6 +20,94 @@ git config -l 查看相关的用户名、邮箱等
 
 --------------------------------------------------------------
 
-git remote  命令
+git remote  命令 
+
+git remote -v （查看远程仓库的状态信息（别名、远程仓库的链接））
+
+git remote show origin 根据别名查看远程仓库的状态信息
+
+git remote add 别名 远程连接       （新增链接）
+
+git remote set-url  别名  远程链接    （修改链接）
+
+git remote remove 别名    （删除链接）
+
+git push origin main:main  （推送到远程main分支）
 
 git push 推送到远程
+
+--------------------------------------------------------------
+
+获取github的token
+
+登录github网站、点击settings 选择 Developer settings
+
+在 Developer settings 中选择 New Personal access tokens
+
+--------------------------------------------------------------
+
+git 撤销修改命令
+
+工作区修改撤销命令
+
+git restore 1.txt 或者 git checkout -- 1.txt
+
+暂存区修改撤销命令
+
+git restore --staged 1.txt （暂存区恢复到工作区）
+
+git restore 1.txt 或者  git checkout -- 1.txt
+
+本地git仓库修改撤销命令
+
+git  reset ---hard  版本ID
+
+远程仓库修改撤销命令
+
+git reset --hard 版本ID   （回退到某个版本）
+
+git push -f origin main   （强制推送本地仓库到远程仓库  谨慎使用）
+
+--------------------------------------------------------------
+
+git 删除文件 添加到暂存区
+
+git add *  或者  git rm  1.txt
+
+git commit -m "删除了1.txt"
+
+git log --oneline  查看所有的提交历史记录（每条记录简短显示一行）
+
+git  push origin main  提交到远程仓库
+
+--------------------------------------------------------------
+
+git 撤销删除
+
+git 撤销工作区的删除
+
+git restore 1.txt 或者 git checkout -- 1.txt
+
+git 撤销暂存区的删除
+
+git restore --staged 1.txt
+
+git restore 1.txt 或者 git checkout -- 1.txt
+
+git 撤销本地仓库的删除
+
+git reset --hard 版本ID
+
+
+git 撤销远程仓库的删除
+
+git reset --hard 版本ID
+
+git push -f origin main
+
+--------------------------------------------------------------
+
+git 版本回退
+
+
+--------------------------------------------------------------
