@@ -125,7 +125,7 @@ git reset --soft HEAD^
 
 --mixed  工作区文件内容保持不变，暂存区的被擦除（默认参数）
 
-git reset --soft HEAD^
+git reset --mixed HEAD^
 
 
 git rflog  (查看所有分支的所有操作记录)
@@ -157,6 +157,140 @@ git checkout -b 分支名  （创建新分支并且切换到分支）
 
 git checkout -b 分支名 版本ID （从指定提交创建本地仓库的新分支并切换到分支）
 
+git 删除分支
+
+git branch -d 分支名 （删除分支、如果该分支有提交未进行合并，则会删除失败）
+
+git branch -D 分支名 （强制删除分支）
+
+--------------------------------------------------------------
+
+git 合并分支
+
+首先创建 hotfix 热修复分支，修改BUG后合并分支
+
+git add *  |   git commit -m "修改了bug"   （没有push到远程）
+
+接下来合并分支
+
+先切换到 mian 主分支
+
+git merge 分支名（hotfix）
+
+合并到主分支后  删除 hotfix分支
+
+git branch -d 分支名（hotfix）
+
+--------------------------------------------------------------
+
+git  创建 删除 远程分支
+
+github上可以直接创建分支
+
+git pull  拉取远程
+
+git branch -r 查看远程分支 
 
 
+github 上可以直接删除远程分支
+
+
+本地分支推送到远程分支
+
+git branch 分支名 
+
+查看远程信息：git remote show origin
+
+git push origin（主机名） 分支名
+
+删除远程分支
+
+git push origin（主机名） :分支名
+--------------------------------------------------------------
+
+git 添加开发者一起开发
+
+git config --local user.name 用户名
+
+git config --local user.email 邮箱 
+
+查看  
+
+git config user.name
+
+git config user.email
+
+设置token
+
+git remote set-url origin （token地址）
+
+
+进入github 进入settings 点击Manage access 点击Add people添加新成员
+
+收到邮件 等待同意后 则可以同时开发
+
+--------------------------------------------------------------
+
+git 拉取更新
+
+git fetch  命令可以拉取远程分支最新内容，但不会合并到本地
+
+如需合并到本地使用命令 git merge origin main   进行合并
+
+git push  命令可以拉取远程分支最新内容，并合并到本地
+
+--------------------------------------------------------------
+
+git  解决冲突
+
+git pull
+
+代码中解决 冲突部分
+
+然后提交代码
+
+网上搜的 使用
+
+git stash 把工作区的修改提交到栈区，目的是保存工作区的修改；
+
+git pull 拉取远程分支上的代码并合并到本地分支，目的是消除冲突；
+
+git stash  pop  把保存在栈区的修改部分合并到最新的工作空间中；
+
+手动修改冲突
+
+git stash  clear 清除
+--------------------------------------------------------------
+
+git ssh方式提交代码
+
+生成密钥：ssh-keygen -t rsa -C "邮箱" 一路回车
+
+去文件夹中找到公钥 
+
+去github  找到SSH add GPG keys
+
+然后使用 ssh地址 就可以克隆了
+
+--------------------------------------------------------------
+
+github 中 fork 、watch、star
+
+fork 到github项目中 clone 是克隆到本地计算机上
+
+watch  表示有变化
+
+star  觉得好点亮星星，点赞的意思
+
+--------------------------------------------------------------
+
+github 参与开源项目
+
+1.fork 开源项目
+
+2.贡献自己的代码
+
+3.提交pull request
+
+4.等待审核通过
 --------------------------------------------------------------
